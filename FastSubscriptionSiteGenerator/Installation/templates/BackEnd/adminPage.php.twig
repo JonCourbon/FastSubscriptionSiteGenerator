@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>{{ nom_site }} : Administration</title>
+	<meta charset="utf-8"/>
+	<LINK rel="stylesheet" type="text/css" href="css/style.css">
+
+	<LINK rel="stylesheet" type="text/css" href="css/demo_page.css">
+	<LINK rel="stylesheet" type="text/css" href="css/demo_table.css">
+	<LINK rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	<LINK rel="stylesheet" type="text/css" href="css/jquery-ui-1.7.2.custom.css">
+	<LINK rel="stylesheet" type="text/css" href="css/buttons.dataTables.min.css">
+
+	<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/ju-1.11.4/dt-1.10.11,b-1.1.2,b-colvis-1.1.2,b-print-1.1.2,kt-2.1.1,r-2.0.2,se-1.1.2/datatables.min.css"/>
+ 	<script type="text/javascript" src="https://cdn.datatables.net/t/ju-1.11.4/dt-1.10.11,b-1.1.2,b-colvis-1.1.2,b-print-1.1.2,kt-2.1.1,r-2.0.2,se-1.1.2/datatables.min.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.columnFilter.js"></script>
+	<script type="text/javascript" src="js/jquery.jeditable.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.editable.js"></script>
+	
+	<script type="text/javascript" src="js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="js/jszip.min.js"></script>
+	<script type="text/javascript" src="js/pdfmake.min.js"></script>
+	<script type="text/javascript" src="js/vfs_fonts.js"></script>
+	<script type="text/javascript" src="js/buttons.html5.min.js"></script>
+
+
+	<script type="text/javascript" charset="utf-8">
+	$(document).ready( function () {
+	     {{tablesortscript | raw}}
+	     
+	     
+	     $("#mytable").on("click", "td#btn", function() {
+			// get id:
+			var tr=$(this).closest('tr');
+			var id = tr.attr('id');
+			// get fields
+			
+			{{storescript | raw }}
+			
+	   });
+	});
+		</script>
+
+	<!-- database part -->
+	<?php
+		include('../configuration/config.php');
+		include('../includes/connection.php');
+		$requete="SELECT * FROM {{tname}}";
+		$resultats = $connection->query($requete);
+		$resultats->setFetchMode(PDO::FETCH_OBJ);
+		$tab=$resultats->fetchAll();
+	?>
+</head>
+<body>
+<h1>{{ nom_site }} : Administration</h1>
+<h2>{{tname | raw}}</h2>
+{{tablesort | raw}}
+Rem.: copier une colonne -> presser la touche Ctrl
+</body>
+</html>
+
+

@@ -1,0 +1,11 @@
+label{
+    display: block;
+    width: 150px;
+    float: left;
+}
+
+
+#preview{
+    border: 2px solid #73AD21;
+    padding: 20px;
+}

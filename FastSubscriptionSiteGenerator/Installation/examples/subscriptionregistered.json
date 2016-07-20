@@ -1,0 +1,57 @@
+{
+"steps": [{
+	"name":"Authentification",
+	"type":"authentification",
+	"fields": [{
+		"name": "Name",
+		"type": "string",
+		"description": "Name",
+		"required":true
+	}, {
+		"name": "Nickname",
+		"type": "string",
+		"description": "Nickname",
+		"required":true
+	}, {
+		"name": "Email",
+		"type": "email",
+		"description": "@",
+		"required":true
+	}
+	]
+},
+{
+	"name":"Subscription",
+	"type":"subscription",
+	"fields": [{
+		"name": "Phone number",
+		"type": "tel",
+		"description": "000"
+	}, {
+		"name": "Personnal website",
+		"type": "url",
+		"description": "http://"
+	}, {
+		"name": "Choice",
+		"type": "select",
+		"options":
+			[
+				"CV",
+				"Letter Cover",
+				"Other"
+			]
+	}, {
+		"name": "CV",
+		"type": "file",
+		"extensions":
+			[
+				"pdf",
+				"doc"
+			]
+	},{
+		"name": "Note",
+		"type": "number",
+		"adminonly":true
+	}]
+}]
+}

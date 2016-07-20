@@ -1,0 +1,44 @@
+label{
+    display: block;
+    width: 300px;
+    float: left;
+}
+
+
+#preview{
+    border: 2px solid #73AD21;
+    padding: 20px;
+}
+
+.boxed {
+  display: block;
+  border: 2px solid gray ;
+  float: none;
+} 
+
+fieldset
+{
+  background-color:#CCC;
+  max-width:800px;
+  padding:16px;	
+}
+
+legend {
+	font-weight:bold;
+	padding-top:10px;
+	padding: 0.2em 0.5em;
+  border:1px solid green;
+  background-color:white;
+}
+
+input[type=submit] {
+font-weight:bold;
+ text-align:center;
+ display:inline-block;
+ margin-left:5px;
+ box-shadow:1px 1px 1px #D83F3D;
+ cursor:pointer;
+ margin:auto;
+ }
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+  <html lang="fr">
+      <head>
+          <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">        
+            <title>{{ nom_site }}</title>
+            <meta name="description" content="">
+             <link rel="stylesheet" href="css/normalize.css">
+             <link rel="stylesheet" href="css/skeleton.css">
+             <link rel="stylesheet" href="css/style.css">
+
+            <!-- Materiel Design Lite -->
+      </head>
+<body>      
+<header>
+  <h1>{{ nom_site }}</h1>
+</header>
+<aside>
+{{menu| raw}}
+</aside>
+<section>
+<div class="container">
+{{valid_msg| raw}}
+
+<?php
+	echo 'Enregistré (id='.$_GET['id'].')';
+?>
+</div>
+</section>
+
+<footer>
+  <p>{{footer| raw}}</p>
+</footer>
+
+
+
+</body>
+</html>
+
+<!-- Generated using the FastSubscriptionSiteGenerator library-->

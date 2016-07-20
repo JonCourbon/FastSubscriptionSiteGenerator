@@ -1,0 +1,6 @@
+- Installateur: nom des form par défaut = nom de l'étape
+- Champ de type booléen
+- Champ de type text (textarea; nl2br)
+- Import CSV back-end
+- Installateur: gestion des langues / messages 
+

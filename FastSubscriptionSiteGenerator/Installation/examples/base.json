@@ -1,0 +1,13 @@
+{
+"steps": [{
+	"name":"",
+	"type":"",
+	"fields": [{
+		"name": "",
+		"type": "",
+		"description": "",
+		"required":true
+	}
+	]
+}]
+}

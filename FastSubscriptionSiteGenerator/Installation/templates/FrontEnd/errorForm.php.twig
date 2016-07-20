@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+  <html lang="fr">
+      <head>
+          <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">        
+            <title>{{ nom_site }}</title>
+            <meta name="description" content="">
+             <link rel="stylesheet" href="css/normalize.css">
+             <link rel="stylesheet" href="css/skeleton.css">
+             <link rel="stylesheet" href="css/style.css">
+
+
+            <!-- Materiel Design Lite -->
+      </head>
+<body>      
+<header>
+  <h1>{{ nom_site }}</h1>
+</header>
+{{menu| raw}}
+ 
+
+</header>
+<div class="container">
+<h1>{{ nom_site }}</h1>
+<h2>Error</h2>
+
+{{error_msg| raw}}
+<?php
+	echo 'Erreur: '.$_GET['error'].')';
+?>
+</div>
+
+<footer>
+  <p>{{footer| raw}}</p>
+</footer>
+
+
+
+</body>
+</html>
+
+<?php /** Generated using the FastSubscriptionSiteGenerator library */ ?>
