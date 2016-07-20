@@ -22,6 +22,4 @@ Within a navigator, execute the script <yoururl>/Installation/fastSubscriptionSi
 The website is generated !
 
 
-Updates
-------------
-2016-04-29: add select box for choosing the number of entries
+
