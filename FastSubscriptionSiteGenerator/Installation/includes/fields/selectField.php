@@ -36,10 +36,10 @@
 			{
 				if($checkinform)
 				{
-					$formfield=$formfield.'<option name="'.$option.'" <?php if(isset($_SESSION["'.$this->_alias.'"]) && !empty($_SESSION["'.$this->_alias.'"])) if($_SESSION["'.$this->_alias.'"]=="'.$option.'") echo "selected"; ?>'.'>'.$option.'</option>';
+					$formfield=$formfield.'<option value="'.$option.'" <?php if(isset($_SESSION["'.$this->_alias.'"]) && !empty($_SESSION["'.$this->_alias.'"])) if($_SESSION["'.$this->_alias.'"]=="'.$option.'") echo "selected"; ?>'.'>'.$option.'</option>';
 				}
 				else
-					$formfield=$formfield.'<option name="'.$option.'" >'.$option.'</option>';
+					$formfield=$formfield.'<option value="'.$option.'" >'.$option.'</option>';
 			}
 			$formfield=$formfield.'</select></p>'."\n";		
 			return $formfield;

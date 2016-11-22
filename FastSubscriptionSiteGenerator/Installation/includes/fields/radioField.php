@@ -20,8 +20,7 @@
 
 		public function toForm($checkinform=true)
 		{
-			$formfield='<p><label for="'.$this->_alias.'">
-			    '.$this->_name;
+			$formfield='<p><label for="'.$this->_alias.'">'.$this->_name;
 			if($this->_required)
 				$formfield=$formfield.'<font color="red"> * </font>';
 			$formfield=$formfield.'</label>';
@@ -33,14 +32,14 @@
 					
 				if($checkinform)
 				{
-					$formfield=$formfield.'<input type="radio" name="'.$this->_alias.'" <?php if(isset($_SESSION["'.$this->_alias.'"]) && !empty($_SESSION["'.$this->_alias.'"])) if($_SESSION["'.$this->_alias.'"]=="'.$option.'") echo "selected"; ?>'.$requ.' value="'.$option.'">'.$option.'</option>';
+					$formfield=$formfield.'<input type="radio" name="'.$this->_alias.'" <?php if(isset($_SESSION["'.$this->_alias.'"]) && !empty($_SESSION["'.$this->_alias.'"])) if($_SESSION["'.$this->_alias.'"]=="'.$option.'") echo "check=\"checked\""; ?>'.$requ.' value="'.$option.'"/>'.$option.'</p>';
 				}
 				else
-					$formfield=$formfield.'<input type="radio" name="'.$this->_alias.'"'.$requ.' value="'.$option.'">'.$option.'></option>';
+					$formfield=$formfield.'<input type="radio" name="'.$this->_alias.'"'.$requ.' value="'.$option.'"/><p>'.$option.'</p>';
 	
 				
 			}
-			$formfield=$formfield.'</p>';		
+			$formfield=$formfield.'</p>'."\n";		
 			return $formfield;
 		}
 

@@ -35,7 +35,7 @@
 				$formfield=$formfield.'<?php if(isset($_SESSION["'.$this->_alias.'"]) && !empty($_SESSION["'.$this->_alias.'"])) echo "value=".$_SESSION["'.$this->_alias.'"]; ?>';
 			}
 			$formfield=$formfield.' />
-			</p>';		
+			</p>'."\n";
 			return $formfield;
 		}
 

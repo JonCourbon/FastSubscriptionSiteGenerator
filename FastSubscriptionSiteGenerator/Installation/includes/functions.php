@@ -2,6 +2,12 @@
 	function extractAllData($content)
 	{
 		$content=json_decode($content, true);
+        if(!is_array($content))
+        {
+            echo "The JSON content is not well formatted, please check and try again!";
+            exit();
+        }
+        
 		$type=$content["type"];
 		$steps=$content["steps"];
 		
@@ -202,11 +208,11 @@
     }
 
 
-    function createForm($allfields,$noetape,$checkinform=true)
+    function createForm($allfields,$noetape,$legend,$checkinform=true)
     {
 	$form='<form action="processForm'.$noetape.'.php" method="post" enctype="multipart/form-data" >'."\n"; // enctype="multipart/form-data" for files
 	$form=$form.'<fieldset>'."\n";
-	$form=$form.'<legend>Personnal data</legend>'."\n";
+	$form=$form.'<legend>'.$legend.'</legend>'."\n";
 	foreach ($allfields as &$field) {
 	    if($field->isPublic())
 	    {
