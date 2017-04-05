@@ -1,6 +1,9 @@
 <?php
+	session_start();
+	
 	if( $_POST['login'] =='{{login}}')
 	{
+		$_SESSION["log"]=1;
 		include("adminPage.php");
 	}
 ?>

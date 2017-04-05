@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	
+	if($_SESSION["log"]==1)
+	{
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -57,7 +64,14 @@
 <h2>{{tname | raw}}</h2>
 {{tablesort | raw}}
 Rem.: copier une colonne -> presser la touche Ctrl
+
+<form action="deconnecter.php" method="post">
+<input type="submit" name="BtnSubmit" value="Se déconnecter">
+</form>
+
 </body>
 </html>
 
-
+<?php
+	}
+?>

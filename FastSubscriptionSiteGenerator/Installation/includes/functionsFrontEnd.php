@@ -39,7 +39,7 @@
 
     function createFrontEndStepFile($title,$description,$footer,$fields,$etapes,$noetape,$nbsteps,$authentified=false,$authentifyfields=array(),$checkinform=true,$verticalBar=false)
     {
-	$formContent=createForm($fields,$noetape,$description,$checkinform);
+	$formContent=createForm($fields,$noetape,$etapes[$noetape],$checkinform);
 
 	$identity="";
 	if($authentified)
