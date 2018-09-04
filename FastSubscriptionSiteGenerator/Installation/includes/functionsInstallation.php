@@ -1,5 +1,22 @@
 <?php
 
+function testDBAccess($hote,$port,$nom_bd,$id,$mdp)
+{
+	// Gestion des erreurs avec try catch
+	try
+	{
+		$options=array();
+		$connection = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nom_bd,$id, $mdp,$options);
+		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		return 1;
+		
+	} catch (PDOException $erreur)
+	{
+		
+		return 0;
+	}
+}
+
 function createConfigFile($hote,$port,$nom_bd,$id,$mdp)
 {
 	// on inclue la librairie Twig

@@ -1,5 +1,4 @@
 <?php
-	include_once("functions.php");
 	include_once("Field.php");
 
 	class selectField extends Field
@@ -125,6 +124,7 @@
 
 		public function toRecap()
 		{
+			$scriptfield='';
 			$scriptfield=$scriptfield.'if(isset($_SESSION["'.$this->_alias.'"])&& !empty($_SESSION["'.$this->_alias.'"])){'."\n";
 			$scriptfield=$scriptfield.'echo "<tr>";'."\n";
 			$scriptfield=$scriptfield.'echo "<td>'.$this->_name.':</td>";'."\n";

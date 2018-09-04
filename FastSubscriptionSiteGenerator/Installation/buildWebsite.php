@@ -86,7 +86,6 @@ if(!empty(trim($content)))
 	/*********************************/
 	
 	$extracteddata=extractAllData($content);
-	$type=$extracteddata["type"];
 	$steps=$extracteddata["steps"];
 	$allfields=$extracteddata["allfields"];
 	$nbsteps=$extracteddata["nbsteps"];
@@ -98,7 +97,14 @@ if(!empty(trim($content)))
 	/*********************************/
 	/*   BUILD DATABASE */
 	/*********************************/
-	
+
+	// test database connection
+	$res=testDBAccess($host,$port,$dbname,$login,$password);
+	if($res==0)
+	{
+		echo "enable to access database with the provided parameters"."<br/>";
+		exit();
+	}
 
 	// create database
 	echo "1) Database generation"."<br/>";
@@ -161,6 +167,9 @@ if(!empty(trim($content)))
 	echo "<ul>";
 	
 	$pageURL = 'http';
+	if(!isset($_SERVER["HTTPS"]))
+		$_SERVER["HTTPS"]="off";
+		
     if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
     $pageURL .= "://";
 	if ($_SERVER["SERVER_PORT"] != "80") 

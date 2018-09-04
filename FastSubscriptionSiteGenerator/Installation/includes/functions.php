@@ -8,7 +8,6 @@
             exit();
         }
         
-		$type=$content["type"];
 		$steps=$content["steps"];
 		
 		$nbsteps=count($steps);
@@ -30,7 +29,7 @@
 					
 			$fieldsbysteps[]=array();
 			foreach($stepcontent["fields"] as $field)
-			{
+			{				
 				$newfield=null;
 				$required=false;
 				$sortable=true;
@@ -49,6 +48,9 @@
 					$required=true;
 				if($adminonly)
 					$required=false;
+					
+				if(!isset($field['description']))
+					$field['description']="";
 
 
 				if($field['type']=="string")
@@ -88,6 +90,7 @@
 					$extensions=[];
 					if(isset($field['extensions']))
 						$extensions=$field['extensions'];
+						
 					$newfield=new fileField($field['name'],$field['description'],$extensions,$required,$sortable,$filtering,$adminonly);
 				}
 
@@ -109,7 +112,6 @@
 		
 
 		$extracteddata=array();
-		$extracteddata["type"]=$type;
 		$extracteddata["steps"]=$steps;
 
 		$extracteddata["allfields"]=$allfields;
